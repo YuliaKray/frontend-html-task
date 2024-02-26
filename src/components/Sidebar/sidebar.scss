@@ -1,0 +1,118 @@
+@keyframes open-sidebar {
+    from {
+        display: none;
+        opacity: 0;
+    }
+
+    50% {
+        display: none;
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.sidebar {
+    position: relative;
+    width: 135px;
+    height: 80vh;
+    padding: 20px;
+    border: double 3px #242424;
+    border-radius: 10px;
+    background-color: #000000;
+    display: grid;
+    grid-template-rows: 50px auto auto;
+    transition: width 1s ease;
+
+    div {
+        max-width: 100%;
+    }
+
+    span {
+        padding-left: 10px;
+        animation: open-sidebar 2s forwards ease;
+    }
+
+    &_invisible-span {
+        display: none;
+        opacity: 0;
+    }
+
+    &_close {
+        width: 30px;
+        justify-items: center;
+        transition: width 1s ease;
+
+    }
+
+    &__logo-wrapper {
+        height: fit-content;
+    }
+
+    &__logo {
+        width: 30px;
+        height: 30px;
+    }
+    
+    &__arrow {
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background-color: #242424;
+        color: rgba(255, 255, 255, 0.87);
+        position: absolute;
+        top: 35px;
+        right: -10px;
+        border: none;
+        transition: right 1s ease;
+
+        &:hover {
+            cursor: pointer;
+        }
+        
+        &_close {
+            right: -35px;
+            border: solid 1px #000000;
+            transition: right 1s ease;
+        }
+    }
+        
+    &__links {
+        
+        span {
+            padding-left: 14px;
+        }
+
+        &_down {
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+        }
+    
+    }
+    
+    &__link {
+        padding-left: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(64, 43, 171, 0.4);
+            border-radius: 10px;
+            transition: background-color 1s ease;
+        }
+
+        &-close {
+            padding: 5px;
+        }
+    
+    }
+    
+}
